@@ -6,7 +6,6 @@ import { useState } from "react";
 function App() {
   const [notes, setNotes] = useState([]);
   const [activeNote, setActiveNote] = useState({});
-
   const onAddNotes = () => {
     const newNote = {
       id: uuid(),
@@ -19,6 +18,14 @@ function App() {
 
   const onDeleteNote = (deleteId) => {
     setNotes(notes.filter((note) => note.id !== deleteId));
+  };
+
+  const onSave = (note) => {
+    const noteIndex = notes.findIndex((el) => el.id === note.id);
+    if (noteIndex !== -1) {
+      notes[noteIndex] = note;
+      setNotes([...notes]);
+    }
   };
 
   return (
@@ -35,6 +42,7 @@ function App() {
         onDeleteNote={onDeleteNote}
         activeNote={activeNote}
         setActiveNote={setActiveNote}
+        onSave={onSave}
       />
     </div>
   );
