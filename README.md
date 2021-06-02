@@ -1,1 +1,2 @@
 # Memozeph
+all in memo
