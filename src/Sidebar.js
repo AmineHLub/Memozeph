@@ -6,8 +6,8 @@ function Sidebar({
   activeNote,
 }) {
   // const {activeNote, setActiveNote} = bindActiveNote;
-  console.log('notes', notes)
-  console.log('activeNote', activeNote)
+  // console.log('notes', notes)
+  
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
